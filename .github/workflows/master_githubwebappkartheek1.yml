@@ -1,4 +1,4 @@
-name: "build and deploys"
+name: "new build and deploys"
 on: ["pull_request","push","workflow_dispatch"]
 
 env:
