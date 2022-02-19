@@ -3,7 +3,7 @@ on: ["pull_request","push","workflow_dispatch"]
 
 env:
   AZURE_WEBAPP_NAME: 'GitHubWebAppKartheek'
-  AZURE_WEBAPP_PACKAGE_PATH: '.'
+  AZURE_WEBAPP_PACKAGE_PATH: './published'
   DOTNET_VERSION: '6.0' 
   #NETCORE_VERSION: '6.0.x'
   SUBSCRIPTION_ID: '1dcf29a6-50da-4c99-bf86-8afae12a57c1'
@@ -28,14 +28,14 @@ jobs:
         run: |
           dotnet restore
           dotnet build --configuration Release
-          dotnet publish -o publish
+          dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
           
       # Deploy to Azure Web apps
       - name: 'Run Azure webapp deploy action using publish profile credentials'
         uses: azure/webapps-deploy@v2
         with: 
           app-name: ${{ env.AZURE_WEBAPP_NAME }} # Replace with your app name
-          publish-profile: ${{ secrets.webappsecret  }} # Define secret variable in repository settings as per action documentation
+          publish-profile: ${{ secrets.WEBAPPSECRET }} # Define secret variable in repository settings as per action documentation
           package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
 
 
