@@ -3,7 +3,7 @@ on: ["pull_request","push","workflow_dispatch"]
 
 env:
   AZURE_WEBAPP_NAME: 'GitHubWebAppKartheek'
-  AZURE_WEBAPP_PACKAGE_PATH: './published'
+  AZURE_WEBAPP_PACKAGE_PATH: '.'
   DOTNET_VERSION: '6.0' 
   #NETCORE_VERSION: '6.0.x'
   SUBSCRIPTION_ID: '1dcf29a6-50da-4c99-bf86-8afae12a57c1'
