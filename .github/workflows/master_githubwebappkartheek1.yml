@@ -2,7 +2,7 @@ name: "new build and deploys"
 on: ["pull_request","push","workflow_dispatch"]
 
 env:
-  AZURE_WEBAPP_NAME: 'GitHubWebAppKartheek'
+  AZURE_WEBAPP_NAME: 'GitHubWebAppKartheek1'
   AZURE_WEBAPP_PACKAGE_PATH: './myapp'
   DOTNET_VERSION: '6.0' 
   #NETCORE_VERSION: '6.0.x'
