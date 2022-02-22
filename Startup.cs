@@ -35,7 +35,7 @@ namespace reactasp
         {
             DefaultFilesOptions DefaultFile = new DefaultFilesOptions();  
             DefaultFile.DefaultFileNames.Clear();  
-            DefaultFile.DefaultFileNames.Add("index.html");  
+            DefaultFile.DefaultFileNames.Add("Welcome.html");  
             app.UseDefaultFiles(DefaultFile);  
             app.UseStaticFiles();  
    
